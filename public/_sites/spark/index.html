@@ -67,27 +67,7 @@
 }
 </script>
 
-<!-- ================= Google Analytics 4 =================
-     아래 두 곳의 G-PSNM24XL21 를 발급받은 측정 ID로 교체하세요. -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-PSNM24XL21"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-PSNM24XL21');
-
-  // 예약하기 버튼 클릭 트래킹
-  document.addEventListener('DOMContentLoaded', function () {
-    var btn = document.getElementById('reserve-btn');
-    if (btn) btn.addEventListener('click', function () {
-      gtag('event', 'reserve_click', {
-        event_category: 'booking',
-        event_label: 'naver_booking'
-      });
-    });
-  });
-</script>
-
+<script src="/_sites/shared/lg-analytics.js" defer></script>
 <style>
   :root{
     --ink:#0A0F1E;
