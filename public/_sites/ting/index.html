@@ -1080,8 +1080,13 @@ footer p{font-size:13px;line-height:1.85;color:var(--slate-dim);margin:0 0 10px;
 
 <script>
 (function(){
-  /* 신청은 자체 API(/api/apply)로 접수되어 관리자 페이지에서 확인합니다. */
-  var CONTACT_EMAIL = 'myhero.lee@gmail.com';
+  /* ── 신청 접수 이메일 설정 ──────────────────────────────
+     아래 주소를 신청서를 받을 실제 이메일로 바꾸세요.
+     FormSubmit(formsubmit.co) 무료 서비스를 사용합니다.
+     배포 후 첫 신청이 들어오면 해당 이메일로 활성화(Activate)
+     확인 메일이 오며, 한 번 승인하면 이후 신청 내용이
+     이메일로 자동 수신됩니다. 별도 서버·가입이 필요 없습니다. */
+  var RECEIVE_EMAIL = 'myhero.lee@gmail.com';
 
   var form = document.getElementById('applyForm');
   var err  = document.getElementById('formError');
@@ -1126,16 +1131,20 @@ footer p{font-size:13px;line-height:1.85;color:var(--slate-dim);margin:0 0 10px;
       '미혼 자기확인': '동의',
       '본인·재직 확인 및 인터뷰 절차': '동의',
       '개인정보/약관/행동규범': '동의',
-      '소식 수신': document.getElementById('c4').checked ? '동의' : '미동의'
+      '소식 수신': document.getElementById('c4').checked ? '동의' : '미동의',
+      '_subject': '[요트팅] 참가 신청 - ' + v('f-name'),
+      '_replyto': v('f-email'),
+      '_template': 'table',
+      '_captcha': 'false'
     };
 
     btn.disabled = true;
     btn.textContent = '전송 중…';
 
-    fetch('/api/apply', {
+    fetch('https://formsubmit.co/ajax/' + RECEIVE_EMAIL, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-      body: JSON.stringify({ site: 'ting', data: payload })
+      body: JSON.stringify(payload)
     }).then(function(res){
       if(!res.ok) throw new Error('send failed');
       return res.json();
@@ -1146,7 +1155,7 @@ footer p{font-size:13px;line-height:1.85;color:var(--slate-dim);margin:0 0 10px;
     }).catch(function(){
       btn.disabled = false;
       btn.textContent = '요트팅 참가 신청하기';
-      err.textContent = '전송에 실패했습니다. 잠시 후 다시 시도하시거나, ' + CONTACT_EMAIL + ' 로 직접 메일 주세요.';
+      err.textContent = '전송에 실패했습니다. 잠시 후 다시 시도하시거나, ' + RECEIVE_EMAIL + ' 로 직접 메일 주세요.';
     });
   });
 })();

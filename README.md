@@ -32,11 +32,9 @@ npm run dev
 ## 배포 (Vercel)
 
 1. 이 저장소를 GitHub에 push → [vercel.com/new](https://vercel.com/new)에서 Import (프레임워크 자동 인식, 설정 불필요)
-2. **DB**: Vercel 대시보드 → Storage → Neon(Postgres) 생성·연결 → `DATABASE_URL` 자동 주입됨. 테이블은 첫 요청 때 자동 생성(`applications`)
-3. **환경변수** (Settings → Environment Variables, [.env.example](.env.example) 참고):
-   - `ADMIN_PASSWORD` — 관리자 로그인 비밀번호 (필수)
-   - `RESEND_API_KEY`, `NOTIFY_EMAIL` — 신청 시 이메일 알림 (선택)
-4. **도메인**: Settings → Domains에 위 표의 도메인 7개(admin 포함) 모두 추가
+2. **도메인**: Settings → Domains에 위 표의 도메인 모두 추가
+
+현재 신청 폼은 **이메일 전송 방식**(ting: formsubmit.co / charter: mailto)이라 DB·환경변수 설정 없이 배포만 하면 동작한다.
 
 ## 가비아 DNS 전환
 
@@ -50,6 +48,11 @@ Vercel에 도메인을 추가하면 안내가 뜨지만, 기본값은:
 기존 `*.github.io` CNAME을 위 값으로 하나씩 바꾸면 된다(사이트별로 순차 전환 가능, 다운타임 없음).
 전환 완료 후 기존 GitHub Pages 저장소들은 archive 처리.
 
-## 신청 데이터 흐름
+## 신청 접수 방식
 
-폼 제출 → `POST /api/apply` `{ site, data: {…} }` → `applications` 테이블 저장 (+ Resend 설정 시 이메일 알림) → `admin.layeredglory.com`에서 서비스/상태별 필터, 상태 변경(신규/확인/완료), 삭제.
+**현재(이메일)**: 요트팅 폼은 formsubmit.co로 myhero.lee@gmail.com에 전송, 차터 폼은 mailto 링크로 메일 앱을 연다. 서버·DB 불필요.
+
+**나중에 관리자로 전환하려면** (코드는 이미 들어 있음, 휴면 상태):
+1. Vercel Storage에서 Neon 연결(`DATABASE_URL` 자동 주입) + `ADMIN_PASSWORD` 환경변수 추가 (+선택: `RESEND_API_KEY`, `NOTIFY_EMAIL`)
+2. ting/charter의 폼 제출 스크립트를 `POST /api/apply` `{ site, data: {…} }` 호출로 교체 (git 히스토리 `8003f29` 커밋에 구현 있음)
+3. admin.layeredglory.com 도메인 추가 → 서비스/상태별 필터, 상태 변경, 삭제 사용 가능

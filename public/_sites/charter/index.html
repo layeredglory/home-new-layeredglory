@@ -739,8 +739,9 @@ footer p{font-size:13px;line-height:1.85;color:var(--slate-dim);margin:0 0 10px;
     </form>
 
     <div class="sent" id="qSent">
-      <h3>견적 요청이 접수되었습니다</h3>
-      <p>담당자가 확인 후 남겨 주신 연락처 또는 이메일로 회신드리겠습니다.</p>
+      <h3>견적 요청서가 작성되었습니다</h3>
+      <p>아래 버튼을 누르면 메일 앱이 열리고, 작성하신 내용이 그대로 담긴 메일이 준비됩니다. 그대로 전송해 주시면 접수됩니다.</p>
+      <a class="btn btn-primary" id="qMail" href="#">견적 요청 메일 보내기</a>
     </div>
   </div>
 </section>
@@ -784,7 +785,7 @@ footer p{font-size:13px;line-height:1.85;color:var(--slate-dim);margin:0 0 10px;
 <script>
 (function(){
   var f=document.getElementById('quoteForm'),err=document.getElementById('qErr'),
-      sent=document.getElementById('qSent');
+      sent=document.getElementById('qSent'),mail=document.getElementById('qMail');
   var v=function(id){return (document.getElementById(id).value||'').trim();};
 
   f.addEventListener('submit',function(e){
@@ -801,37 +802,30 @@ footer p{font-size:13px;line-height:1.85;color:var(--slate-dim);margin:0 0 10px;
     if(!document.getElementById('qc1').checked){
       err.textContent='개인정보 수집·이용 동의가 필요합니다.'; return;
     }
-    var payload={
-      '회사 · 단체명': v('q-company'),
-      '담당자명': v('q-name'),
-      '부서 · 직위': v('q-dept')||'-',
-      '연락처': v('q-phone'),
-      '이메일': v('q-email'),
-      '예상 인원': v('q-count'),
-      '희망 일자': v('q-date')||'미정',
-      '희망 선박': v('q-boat')||'상담 후 결정',
-      '도입 방식': v('q-model'),
-      '예산 항목': v('q-budget')||'미정',
-      '식사 방식': v('q-food')||'미정',
-      '데코레이션': v('q-deco')||'미정',
-      '행사 성격 · 요청사항': v('q-memo')||'-',
-      '개인정보 수집·이용': '동의',
-      '소식 수신': document.getElementById('qc2').checked?'동의':'미동의'
-    };
-    var btn=f.querySelector('button[type="submit"]');
-    if(btn){btn.disabled=true;btn.textContent='전송 중…';}
-    fetch('/api/apply',{
-      method:'POST',
-      headers:{'Content-Type':'application/json','Accept':'application/json'},
-      body:JSON.stringify({site:'charter',data:payload})
-    }).then(function(res){
-      if(!res.ok) throw new Error('send failed');
-      f.style.display='none'; sent.classList.add('show');
-      sent.scrollIntoView({behavior:'smooth',block:'center'});
-    }).catch(function(){
-      if(btn){btn.disabled=false;btn.textContent='견적 요청 보내기';}
-      err.textContent='전송에 실패했습니다. 잠시 후 다시 시도하시거나, myhero.lee@gmail.com 로 직접 메일 주세요.';
-    });
+    var body=[
+      '[CHARTER 요트 전세 견적 요청]','',
+      '회사 · 단체명: '+v('q-company'),
+      '담당자명: '+v('q-name'),
+      '부서 · 직위: '+(v('q-dept')||'-'),
+      '연락처: '+v('q-phone'),
+      '이메일: '+v('q-email'),
+      '',
+      '예상 인원: '+v('q-count'),
+      '희망 일자: '+(v('q-date')||'미정'),
+      '희망 선박: '+(v('q-boat')||'상담 후 결정'),
+      '도입 방식: '+v('q-model'),
+      '예산 항목: '+(v('q-budget')||'미정'),
+      '식사 방식: '+(v('q-food')||'미정'),
+      '데코레이션: '+(v('q-deco')||'미정'),
+      '','행사 성격 · 요청사항:', (v('q-memo')||'-'),
+      '',
+      '개인정보 수집·이용: 동의',
+      '소식 수신: '+(document.getElementById('qc2').checked?'동의':'미동의')
+    ].join('\n');
+    mail.href='mailto:myhero.lee@gmail.com?subject='+encodeURIComponent('[CHARTER 견적요청] '+v('q-company')+' / '+v('q-count'))
+             +'&body='+encodeURIComponent(body);
+    f.style.display='none'; sent.classList.add('show');
+    sent.scrollIntoView({behavior:'smooth',block:'center'});
   });
 })();
 </script>
