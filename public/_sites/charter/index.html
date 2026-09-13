@@ -135,9 +135,11 @@ h3{font-size:clamp(17px,2.1vw,20px);line-height:1.5;color:#e6eff4}
 .fleet-cards{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:52px}
 @media(max-width:880px){.fleet-cards{grid-template-columns:1fr}}
 .boat{background:#fff;border:1px solid var(--line-light);border-radius:3px;overflow:hidden;display:flex;flex-direction:column}
-.boat-photo{position:relative}
-.boat-photo img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.boat-photo{position:relative;display:grid;grid-template-columns:1.62fr 1fr;gap:2px;aspect-ratio:16/9;overflow:hidden;background:var(--line-light)}
+.boat-photo img{width:100%;height:100%;object-fit:cover;display:block}
 .boat-tag{position:absolute;left:0;bottom:0;background:rgba(7,26,36,.9);color:var(--cyan-soft);font-family:var(--ff-m);font-size:10.5px;letter-spacing:.14em;padding:7px 13px}
+.boat-tag.inside{left:auto;right:0;background:rgba(7,26,36,.78);color:#cfe3ea;letter-spacing:.1em}
+@media(max-width:520px){.boat-photo{grid-template-columns:1.35fr 1fr;aspect-ratio:2/1}}
 .boat-body{padding:26px 26px 28px;display:flex;flex-direction:column;flex:1}
 .boat-name{font-family:var(--ff-h);font-weight:800;font-size:26px;letter-spacing:-.02em;color:#0a1f2b;margin:0}
 .boat-type{font-family:var(--ff-m);font-size:11.5px;letter-spacing:.1em;color:#0f7f92;margin:6px 0 18px}
@@ -383,12 +385,14 @@ footer p{font-size:13px;line-height:1.85;color:var(--slate-dim);margin:0 0 10px;
     <div class="fleet-cards">
       <article class="boat">
         <div class="boat-photo">
-          <img src="images/fleet-alt.webp" alt="한강 세일링파라다이스 계류장의 파워요트" loading="lazy">
-          <span class="boat-tag">실선 사진 준비 중</span>
+          <img src="images/rosalyn.webp" alt="한강을 항해하는 카타마란 파워요트 로잘린" loading="lazy">
+          <img src="images/rosalyn-interior.webp" alt="로잘린 선내 라운지" loading="lazy">
+          <span class="boat-tag">ROSALYN</span>
+          <span class="boat-tag inside">선내</span>
         </div>
         <div class="boat-body">
           <h3 class="boat-name">로잘린 <span style="font-family:var(--ff-m);font-size:13px;font-weight:400;letter-spacing:.08em;color:#5d7a8a">ROSALYN</span></h3>
-          <p class="boat-type">카타마란 · 쌍발 엔진 파워요트</p>
+          <p class="boat-type">카타마란 58피트 · 쌍발 엔진 파워요트</p>
           <ul class="boat-spec">
             <li><span class="k">정원</span><span class="v"><b>50명</b></span></li>
             <li><span class="k">운항</span><span class="v"><b>120~150분</b></span></li>
@@ -401,16 +405,18 @@ footer p{font-size:13px;line-height:1.85;color:var(--slate-dim);margin:0 0 10px;
 
       <article class="boat">
         <div class="boat-photo">
-          <img src="images/soday.webp" alt="한강에 정박한 카타마란 요트 Soday" loading="lazy">
+          <img src="images/soday.webp" alt="한강에 정박한 카타마란 요트 소데이" loading="lazy">
+          <img src="images/soday-interior.webp" alt="소데이 선내 다이닝 공간" loading="lazy">
           <span class="boat-tag">SODAY</span>
+          <span class="boat-tag inside">선내</span>
         </div>
         <div class="boat-body">
           <h3 class="boat-name">소데이 <span style="font-family:var(--ff-m);font-size:13px;font-weight:400;letter-spacing:.08em;color:#5d7a8a">SODAY</span></h3>
-          <p class="boat-type">카타마란 · 2층 구조 파워요트</p>
+          <p class="boat-type">카타마란 44피트 · 2층 구조 파워요트</p>
           <ul class="boat-spec">
-            <li><span class="k">정원</span><span class="v"><b>30명 내외</b></span></li>
+            <li><span class="k">정원</span><span class="v"><b>최대 30명</b></span></li>
             <li><span class="k">운항</span><span class="v"><b>120~150분</b></span></li>
-            <li><span class="k">규격</span><span class="v">길이 <b>15m</b> · 폭 <b>5m</b> · 높이 <b>7m</b> <small style="color:#5d7a8a">(개략치)</small></span></li>
+            <li><span class="k">규격</span><span class="v"><b>44피트</b> (약 13.4m) · 폭 <b>5m</b> · 높이 <b>7m</b></span></li>
             <li><span class="k">구조</span><span class="v">1층 운항실·편의시설 / 2층 전망 데크 / 하부 화장실·침실</span></li>
             <li><span class="k">적합</span><span class="v">임원 리트릿, 팀 단위 워크숍, VIP 초청, 프러포즈·기념일</span></li>
           </ul>
@@ -680,7 +686,7 @@ footer p{font-size:13px;line-height:1.85;color:var(--slate-dim);margin:0 0 10px;
           <select id="q-boat">
             <option value="">상담 후 결정</option>
             <option>로잘린 (최대 50명)</option>
-            <option>소데이 (30명 내외)</option>
+            <option>소데이 (최대 30명)</option>
             <option>복수 선박 동시 운항</option>
           </select>
         </div>
