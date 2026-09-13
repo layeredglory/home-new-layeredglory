@@ -7,7 +7,7 @@
    - cta_click      : 사이트 간 이동 버튼 클릭 (*.layeredglory.com 링크)
    공통 파라미터 site: main | sail | port | ting | spark | charter */
 (function () {
-  var ID = 'G-PSNM24XL21';
+  var ID = 'G-Q4VMK59NBL';
 
   window.dataLayer = window.dataLayer || [];
   function gtag() { dataLayer.push(arguments); }
