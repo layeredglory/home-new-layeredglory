@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://sail.layeredglory.com/</loc>
+    <lastmod>2026-08-31</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://sail.layeredglory.com/assets/images/hero-yacht.jpg</image:loc>
+      <image:title>레이어드글로리 한강 프리미엄 세일링 요트</image:title>
+      <image:caption>한강 석양을 배경으로 항해하는 레이어드글로리 세일링 요트</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://sail.layeredglory.com/assets/images/card-ting.jpg</image:loc>
+      <image:title>요트팅 - 한강 선셋 만남 프로그램</image:title>
+      <image:caption>3040 미혼 남녀를 위한 한강 요트 선셋 소셜 모임 요트팅</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://sail.layeredglory.com/assets/images/card-spark.jpg</image:loc>
+      <image:title>불꽃 요트 - 서울세계불꽃축제 한강 요트 관람</image:title>
+      <image:caption>한강 요트 위에서 즐기는 프라이빗 불꽃축제 패키지 불꽃 위의 항해</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://sail.layeredglory.com/assets/images/card-charter.jpg</image:loc>
+      <image:title>요트 전세 - 한강 기업·단체 요트 차터 및 대관</image:title>
+      <image:caption>최대 50명, 기업 워크숍 및 프라이빗 VIP 대관 요트 전세</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://sail.layeredglory.com/assets/images/card-soon.jpg</image:loc>
+      <image:title>레이어드글로리 프라이빗 크루즈</image:title>
+      <image:caption>한강 블루아워 나이트 크루즈</image:caption>
+    </image:image>
+  </url>
+</urlset>

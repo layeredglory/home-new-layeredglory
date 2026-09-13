@@ -1,0 +1,549 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="선물과 함께 보내는 짧은 편지. 앞뒤 문장은 거들어 드리고, 가운데 한 문장만 직접 쓰시면 됩니다.">
+<meta name="theme-color" content="#EFE5D2">
+<link rel="canonical" href="https://port.layeredglory.com/letter.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="레이어드글로리 × 홍주축산 홍성">
+<meta property="og:title" content="홍성에서 보내는 편지">
+<meta property="og:description" content="선물과 함께 보내는 짧은 편지. 앞뒤 문장은 거들어 드리고, 가운데 한 문장만 직접 쓰시면 됩니다.">
+<meta property="og:url" content="https://port.layeredglory.com/letter.html">
+<meta property="og:locale" content="ko_KR">
+<meta name="twitter:card" content="summary_large_image">
+<style>img{max-width:100%; height:auto} [hidden]{display:none!important}</style>
+<title>홍성에서 보내는 편지</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=IBM+Plex+Sans+KR:wght@400;500;600&display=swap">
+
+</head>
+<body>
+<style>
+  /* 가을 들녘 — 미색 한지 바탕에 단풍빛. 한 가지 빛으로 못박아 둔다. */
+  :root{
+    --ground:#EFE5D2;
+    --ground-2:#E6D9C2;
+    --chrome-ink:#2E2620;
+    --chrome-soft:#6B5F52;
+    --chrome-faint:#9A8B7B;
+    --chrome-line:rgba(46,38,32,.17);
+    --field-bg:#FBF7EF;
+    --field-line:rgba(46,38,32,.22);
+    --field-line-on:#B03528;
+
+    /* 종이 */
+    --paper:#FDFAF3;
+    --paper-edge:#E8DFCC;
+    --ink:#2E2620;
+    --ink-soft:#6B5F52;
+    --seal:#B03528;
+    --straw:#A3801F;
+    --maple:#B03528;
+    --persimmon:#C4712F;
+
+    --shadow-paper:0 1px 2px rgba(46,38,32,.07), 0 14px 38px rgba(46,38,32,.15);
+
+    --f-body:"IBM Plex Sans KR", system-ui, -apple-system, "Malgun Gothic", sans-serif;
+    --f-letter:"Gowun Batang", "Nanum Myeongjo", Batang, serif;
+  }
+
+  [hidden]{display:none!important}
+  *{box-sizing:border-box}
+  body, h1, h2, h3, p, dd, td, th, small, q, span, label, button, textarea, input{word-break:keep-all; overflow-wrap:break-word}
+  body{
+    margin:0;
+    background:var(--ground);
+    color:var(--chrome-ink);
+    font-family:var(--f-body);
+    font-size:15px;
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3{margin:0; text-wrap:balance; font-weight:600}
+  p{margin:0}
+  button{font:inherit; color:inherit; cursor:pointer}
+  :focus-visible{outline:2px solid var(--field-line-on); outline-offset:2px; border-radius:2px}
+  @media (prefers-reduced-motion:reduce){*{animation:none!important; transition:none!important}}
+
+  .wrap{max-width:1120px; margin:0 auto; padding:clamp(1.5rem,4vw,3.5rem) clamp(1rem,4vw,2rem) 5rem}
+
+
+  /* ── 가을 풍경 — 단풍 ── */
+  .scenery{position:fixed; inset:0; pointer-events:none; z-index:0; overflow:hidden}
+  .glow{
+    position:absolute; top:-14vmin; right:-16vmin;
+    width:min(78vw,600px); aspect-ratio:1; border-radius:50%;
+    background:radial-gradient(circle, rgba(196,113,47,.15) 0%, rgba(196,113,47,.05) 48%, transparent 70%);
+  }
+  .glow2{
+    position:absolute; bottom:-20vmin; left:-14vmin;
+    width:min(68vw,520px); aspect-ratio:1; border-radius:50%;
+    background:radial-gradient(circle, rgba(163,128,31,.12) 0%, rgba(163,128,31,.04) 50%, transparent 72%);
+  }
+  .leaf{position:absolute; display:block}
+  .l1{top:3%;   right:3%;  width:104px; color:var(--maple);     opacity:.26; transform:rotate(28deg)}
+  .l2{top:13%;  right:12%; width:68px;  color:var(--persimmon); opacity:.30; transform:rotate(-42deg)}
+  .l3{bottom:8%; left:2%;  width:92px;  color:var(--persimmon); opacity:.22; transform:rotate(-16deg)}
+  .l4{bottom:24%; left:7%; width:54px;  color:var(--maple);     opacity:.20; transform:rotate(52deg)}
+  .l5{top:52%;  right:1%;  width:58px;  color:var(--straw);     opacity:.22; transform:rotate(-68deg)}
+  @media (max-width:1100px){ .l4,.l5{display:none} }
+  @media (max-width:760px){
+    .l1{width:78px; opacity:.18} .l2{width:50px; opacity:.20} .l3{width:62px; opacity:.15}
+  }
+  .wrap{position:relative; z-index:1}
+  .bundle{width:58px; height:auto; margin-bottom:.1rem}
+
+
+  /* ── 휴대폰 ── */
+  @media (max-width:640px){
+    .wrap{padding:1.35rem 1.15rem 3.5rem}
+    .masthead{margin-bottom:1.6rem; gap:.45rem}
+    .masthead h1{font-size:1.42rem}
+    .masthead .lede{font-size:.92rem}
+    .bundle{width:48px}
+    .compose{gap:1.35rem}
+    .choice{padding:.6rem .7rem; font-size:.94rem}
+    .trigger q{font-size:.89rem}
+    .trigger .sample{font-size:.87rem}
+    .paper{padding:1.6rem 1.35rem; gap:1.1rem; min-height:0}
+    .paper .line, .paper .mine{font-size:1rem; line-height:1.95}
+    .paper .to{font-size:1.06rem}
+    .out input{font-size:.7rem}
+    .row .btn{flex:1 1 auto}
+    body.reading .wrap{padding-top:2.25rem}
+  }
+
+  /* ── 머리 ── */
+  .masthead{display:flex; flex-direction:column; gap:.55rem; margin-bottom:2.25rem}
+  .eyebrow{
+    font-size:.72rem; letter-spacing:.16em; text-transform:uppercase;
+    color:var(--chrome-soft); font-weight:500;
+  }
+  .masthead h1{font-family:var(--f-letter); font-size:clamp(1.6rem,3.4vw,2.15rem); line-height:1.3; font-weight:700}
+  .masthead .lede{color:var(--chrome-soft); max-width:52ch}
+
+  /* ── 2단 ── */
+  .cols{display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:clamp(1.5rem,3vw,3rem); align-items:start}
+  @media (max-width:900px){ .cols{grid-template-columns:1fr} }
+
+  /* ── 작성 ── */
+  .compose{display:flex; flex-direction:column; gap:1.75rem}
+  .field{display:flex; flex-direction:column; gap:.5rem}
+  .field > label, .blocklabel{
+    font-size:.78rem; letter-spacing:.09em; font-weight:600; color:var(--chrome-soft);
+  }
+  .hint{font-size:.8rem; color:var(--chrome-soft); line-height:1.55}
+  input[type=text], textarea{
+    width:100%; font:inherit; color:var(--chrome-ink);
+    background:var(--field-bg);
+    border:1px solid var(--field-line); border-radius:3px;
+    padding:.6rem .7rem;
+  }
+  textarea{resize:vertical; min-height:5.5rem; font-family:var(--f-letter); font-size:1.02rem; line-height:1.8}
+  input:focus, textarea:focus{border-color:var(--field-line-on); outline:none}
+
+  .choices{display:flex; flex-direction:column; gap:.4rem}
+  .choice{
+    display:flex; gap:.6rem; align-items:flex-start; text-align:left;
+    background:transparent; border:1px solid var(--chrome-line); border-radius:3px;
+    padding:.55rem .7rem; line-height:1.6;
+    transition:border-color .15s, background .15s;
+  }
+  .choice:hover{border-color:var(--field-line-on)}
+  .choice[aria-pressed="true"]{border-color:var(--field-line-on); background:var(--field-bg)}
+  .choice .tick{
+    flex:0 0 auto; width:.6rem; height:.6rem; margin-top:.5rem; border-radius:50%;
+    border:1px solid var(--field-line); background:transparent;
+  }
+  .choice[aria-pressed="true"] .tick{background:var(--seal); border-color:var(--seal)}
+
+  /* ── 방아쇠 ── */
+  .triggers{border-top:1px solid var(--chrome-line); padding-top:1rem; display:flex; flex-direction:column; gap:.9rem}
+  .trigger{display:flex; flex-direction:column; gap:.25rem}
+  .trigger q{font-weight:500; font-size:.92rem; quotes:none}
+  .trigger .sample{
+    font-family:var(--f-letter); font-size:.9rem; color:var(--chrome-soft);
+    border-left:2px solid var(--straw); padding-left:.65rem; line-height:1.7;
+  }
+  .req{color:var(--seal); font-weight:600}
+
+  /* ── 종이 ── */
+  .stage{position:sticky; top:2rem}
+  @media (max-width:900px){ .stage{position:static} }
+  .paper{
+    background:var(--paper);
+    color:var(--ink);
+    border:1px solid var(--paper-edge);
+    border-radius:2px;
+    box-shadow:var(--shadow-paper);
+    padding:clamp(2rem,4.5vw,3.25rem) clamp(1.5rem,4vw,3rem);
+    font-family:var(--f-letter);
+    display:flex; flex-direction:column; gap:1.4rem;
+    min-height:24rem;
+  }
+  .paper .to{font-size:1.12rem; font-weight:700}
+  .paper .line{font-size:1.05rem; line-height:2.05; white-space:pre-wrap}
+  .paper .mine{font-size:1.05rem; line-height:2.05; white-space:pre-wrap}
+  .paper .empty{color:var(--ink-soft); opacity:.65}
+  .paper .sign{
+    margin-top:auto; padding-top:1.5rem;
+    display:flex; align-items:flex-end; justify-content:flex-end; gap:.75rem;
+  }
+  .paper .sign .name{font-size:1.05rem}
+  .seal{
+    flex:0 0 auto; width:2.5rem; height:2.5rem; border-radius:3px;
+    background:var(--seal); color:#FDFAF3;
+    display:grid; place-items:center;
+    font-family:var(--f-letter); font-weight:700; font-size:1.05rem; letter-spacing:-.02em;
+  }
+  .origin{
+    margin-top:1.25rem; padding-top:1rem; border-top:1px solid var(--paper-edge);
+    font-family:var(--f-body); font-size:.76rem; letter-spacing:.04em; color:var(--ink-soft);
+    display:flex; justify-content:space-between; gap:1rem; flex-wrap:wrap;
+  }
+
+  /* ── 링크 만들기 ── */
+  .make{display:flex; flex-direction:column; gap:.7rem; margin-top:1.5rem}
+  .btn{
+    border:1px solid var(--maple); background:var(--maple); color:#FDFAF3;
+    border-radius:3px; padding:.7rem 1.1rem; font-weight:600; letter-spacing:.01em;
+  }
+  .btn[disabled]{opacity:.4; cursor:not-allowed}
+  .btn.ghost{background:transparent; color:var(--chrome-ink); border-color:var(--chrome-line); font-weight:500}
+  .row{display:flex; gap:.6rem; flex-wrap:wrap}
+  .out{display:flex; flex-direction:column; gap:.5rem}
+  .out input{font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:.78rem}
+  .status{font-size:.8rem; color:var(--chrome-soft); min-height:1.2em}
+
+  /* ── 읽기 모드 ── */
+  body.reading .wrap{max-width:640px; padding-top:clamp(2.5rem,9vw,6rem)}
+  body.reading .compose-side, body.reading .masthead{display:none}
+  body.reading .cols{grid-template-columns:1fr}
+  body.reading .stage{position:static}
+  .afterword{
+    margin-top:clamp(3rem,8vw,5.5rem); padding-top:1.25rem;
+    border-top:1px solid var(--chrome-line);
+    font-size:.82rem; color:var(--chrome-soft); line-height:1.75;
+    display:none;
+  }
+  body.reading .afterword{display:block}
+  .afterword strong{color:var(--chrome-ink); font-weight:600}
+
+  .note{
+    font-size:.78rem; color:var(--chrome-soft); background:var(--ground-2);
+    border:1px dashed var(--chrome-line); border-radius:3px; padding:.6rem .75rem; line-height:1.6;
+  }
+</style>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <symbol id="maple-leaf" viewBox="0 0 100 118">
+    <path fill="currentColor" d="M 32.6 83.4 Q 38.4 81.5 33.5 84.9 L 31.1 84.8 L 25.0 86.1 L 18.6 84.2 L 22.7 78.9 L 28.4 76.4 L 30.2 74.9 Q 36.2 74.7 36.8 74.0 Q 27.9 72.8 18.4 72.5 L 15.4 70.2 L 6.3 66.1 L -0.2 57.7 L 10.1 54.7 L 19.7 56.7 L 23.5 56.6 Q 31.4 61.9 39.3 66.2 Q 29.5 57.4 20.6 50.5 L 19.4 46.1 L 13.5 36.0 L 13.1 23.3 L 25.1 27.6 L 33.0 36.3 L 36.7 38.8 Q 40.6 49.4 45.9 61.4 Q 42.8 47.2 39.6 35.8 L 41.2 31.3 L 42.5 19.1 L 50.0 8.0 L 57.5 19.1 L 58.8 31.3 L 60.4 35.8 Q 57.2 47.2 54.1 61.4 Q 59.4 49.4 63.3 38.8 L 67.0 36.3 L 74.9 27.6 L 86.9 23.3 L 86.5 36.0 L 80.6 46.1 L 79.4 50.5 Q 70.5 57.4 60.7 66.2 Q 68.6 61.9 76.5 56.6 L 80.3 56.7 L 89.9 54.7 L 100.2 57.7 L 93.7 66.1 L 84.6 70.2 L 81.6 72.5 Q 72.1 72.8 63.2 74.0 Q 63.8 74.7 69.8 74.9 L 71.6 76.4 L 77.3 78.9 L 81.4 84.2 L 75.0 86.1 L 68.9 84.8 L 66.5 84.9 Q 61.6 81.5 67.4 83.4 Z"/>
+    <path stroke="currentColor" stroke-width="4" stroke-linecap="round" fill="none" d="M50 74v42"/>
+  </symbol>
+</svg>
+
+<div class="scenery" aria-hidden="true">
+  <div class="glow"></div>
+  <div class="glow2"></div>
+  <svg class="leaf l1" viewBox="0 0 100 118"><use href="#maple-leaf"/></svg>
+  <svg class="leaf l2" viewBox="0 0 100 118"><use href="#maple-leaf"/></svg>
+  <svg class="leaf l3" viewBox="0 0 100 118"><use href="#maple-leaf"/></svg>
+  <svg class="leaf l4" viewBox="0 0 100 118"><use href="#maple-leaf"/></svg>
+  <svg class="leaf l5" viewBox="0 0 100 118"><use href="#maple-leaf"/></svg>
+</div>
+
+<div class="wrap">
+
+  <header class="masthead">
+    <svg class="bundle" viewBox="0 0 180 168" aria-hidden="true">
+      <ellipse cx="90" cy="152" rx="58" ry="7.5" fill="rgba(46,38,32,.10)"/>
+      <!-- 매듭 자락 -->
+      <path d="M80 60C68 70 58 76 46 79" stroke="#C4712F" stroke-width="7" stroke-linecap="round" fill="none"/>
+      <path d="M100 60c12 10 22 16 34 19" stroke="#C4712F" stroke-width="7" stroke-linecap="round" fill="none"/>
+      <!-- 매듭 고리 -->
+      <path d="M90 56C71 54 57 45 61 34c4-9 18 0 29 18Z" fill="#C4712F"/>
+      <path d="M90 56c19-2 33-11 29-22-4-9-18 0-29 18Z" fill="#C4712F"/>
+      <path d="M90 56C71 54 57 45 61 34" stroke="#8C2A20" stroke-width="1.6" fill="none" opacity=".45"/>
+      <path d="M90 56c19-2 33-11 29-22" stroke="#8C2A20" stroke-width="1.6" fill="none" opacity=".45"/>
+      <!-- 상자 뚜껑 -->
+      <rect x="22" y="64" width="136" height="26" rx="4" fill="#C4712F"/>
+      <!-- 상자 몸통 -->
+      <rect x="32" y="90" width="116" height="56" rx="4" fill="#B03528"/>
+      <!-- 금색 띠 -->
+      <rect x="82" y="64" width="16" height="82" fill="#E9C86A"/>
+      <rect x="32" y="112" width="116" height="9" fill="#E9C86A"/>
+      <rect x="22" y="64" width="136" height="26" rx="4" fill="none" stroke="rgba(46,38,32,.10)" stroke-width="1.5"/>
+      <!-- 매듭 중심 -->
+      <ellipse cx="90" cy="55" rx="13" ry="8.5" fill="#E9C86A"/>
+      <ellipse cx="90" cy="55" rx="13" ry="8.5" fill="none" stroke="rgba(46,38,32,.14)" stroke-width="1.2"/>
+    </svg>
+    <span class="eyebrow">레이어드글로리 &times; 홍주축산 홍성</span>
+    <h1>말로 하긴 쑥스러운 인사를,<br>한 장에 담아 함께 보냅니다</h1>
+    <p class="lede">준비된 문장이 앞뒤를 거들어 드립니다. 가운데 한 문장만, 그분께만 해당되는 이야기로 채워 주세요. 그 한 문장이 이 편지를 편지로 만듭니다.</p>
+  </header>
+
+  <div class="cols">
+
+    <!-- 작성 -->
+    <section class="compose compose-side" aria-label="편지 쓰기">
+
+      <p class="note" id="prefillNote">지금 보이는 것은 <strong>예시로 채워둔 편지</strong>입니다. 아래 <b>예시 지우고 시작</b>을 누르면 빈 편지가 됩니다.</p>
+
+      <div class="field">
+        <label for="to">받는 분</label>
+        <input type="text" id="to" placeholder="예) 김재호 사장님" autocomplete="off">
+      </div>
+
+      <div class="field">
+        <span class="blocklabel">첫인사 — 하나 고르세요</span>
+        <div class="choices" id="openers"></div>
+      </div>
+
+      <div class="field">
+        <label for="mine">나의 한 문장 <span class="req">*</span></label>
+        <p class="hint">여기만큼은 직접 써 주세요. 짧아도 됩니다. 아래 질문 중 하나에 답한다고 생각하시면 손이 움직입니다.</p>
+        <textarea id="mine" placeholder="그분께만 해당되는 이야기를 한 문장으로"></textarea>
+
+        <div class="triggers">
+          <div class="trigger">
+            <q>그분과 마주 앉았던 자리 하나를 떠올려 보세요.</q>
+            <p class="sample">작년 3월에 공장 내려갔을 때 국밥 사주신 거, 저 아직 기억합니다.</p>
+          </div>
+          <div class="trigger">
+            <q>올해 그분이 나 대신 감당해 준 일이 있었습니까?</q>
+            <p class="sample">6월에 납기 밀렸을 때 위에다 저 대신 말씀해 주신 것, 제가 압니다.</p>
+          </div>
+          <div class="trigger">
+            <q>무심코 하신 말 중에 남아 있는 게 있습니까?</q>
+            <p class="sample">급할수록 돌아가라고 하셨던 그 말, 올해 내내 생각났습니다.</p>
+          </div>
+          <div class="trigger">
+            <q>처음 뵌 게 언제였습니까?</q>
+            <p class="sample">벌써 일곱 해째입니다. 처음 인사드린 게 그해 가을이었지요.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="field">
+        <span class="blocklabel">맺음말 — 하나 고르세요</span>
+        <div class="choices" id="closers"></div>
+      </div>
+
+      <div class="field">
+        <label for="from">보내는 사람</label>
+        <input type="text" id="from" placeholder="예) 이정우 드림" autocomplete="off">
+      </div>
+
+      <div class="make">
+        <div class="row">
+          <button class="btn" id="makeBtn" type="button">링크 만들기</button>
+          <button class="btn ghost" id="clearBtn" type="button">예시 지우고 시작</button>
+        </div>
+        <div class="out" id="out" hidden>
+          <input type="text" id="url" readonly aria-label="만들어진 편지 링크">
+          <div class="row">
+            <button class="btn ghost" id="copyBtn" type="button">주소 복사</button>
+            <button class="btn ghost" id="openBtn" type="button">받는 분 화면으로 보기</button>
+          </div>
+        </div>
+        <p class="status" id="status" role="status"></p>
+        <p class="hint">편지 내용은 <b>주소 안에 그대로 담깁니다.</b> 저장되는 곳도, 남는 기록도 없습니다. 주소를 지우면 편지도 사라집니다.</p>
+      </div>
+    </section>
+
+    <!-- 종이 -->
+    <section class="stage" aria-label="편지 미리보기">
+      <article class="paper">
+        <p class="to" id="pTo"></p>
+        <p class="line" id="pOpen"></p>
+        <p class="mine" id="pMine"></p>
+        <p class="line" id="pClose"></p>
+        <div class="sign">
+          <span class="name" id="pFrom"></span>
+          <span class="seal" id="pSeal" aria-hidden="true"></span>
+        </div>
+        <div class="origin">
+          <span>충청남도 홍성 &middot; 홍주축산</span>
+          <span>병오년 한가위</span>
+        </div>
+      </article>
+
+      <div class="afterword">
+        <p><strong>홍주축산 홍성</strong>은 충남 홍성의 정육점입니다. 젊은 사장 우민규, 정대영 두 사람이 산지에서 직접 고르고 손질해 보냅니다.</p>
+        <p style="margin-top:.6rem">레이어드글로리는 이 집을 소개할 뿐, 이 거래에서 아무런 이익을 받지 않습니다.</p>
+      </div>
+    </section>
+
+  </div>
+</div>
+
+<script>
+(function(){
+  var OPENERS = [
+    "올 한 해 참 감사했습니다. 추석이라 인사를 드리려는데, 무슨 말씀을 드려야 할지 한참을 고민했습니다.",
+    "명절이 되니 먼저 떠오르는 분들이 있습니다. 그중 한 분이 당신이었습니다.",
+    "한 해가 어떻게 갔는지 모르겠습니다. 다만 도움 받은 것만은 또렷합니다."
+  ];
+  var CLOSERS = [
+    "충남 홍성에서 좋은 고기 한 상자 보냅니다. 제가 직접 먹어보고 고른 것입니다. 넉넉한 한가위 보내시고, 부디 건강하십시오.",
+    "마음을 다 담기에는 작은 것입니다. 가족분들과 따뜻한 명절 보내시길 바랍니다.",
+    "말로 하려니 쑥스러워 이렇게 적습니다. 좋은 명절 되십시오."
+  ];
+
+  var EXAMPLE = {
+    to:"김재호 사장님",
+    o:0,
+    m:"작년 3월에 공장 내려갔을 때 국밥 사주신 거, 저 아직 기억합니다.",
+    c:0,
+    from:"이정우 드림"
+  };
+
+  var $ = function(id){ return document.getElementById(id); };
+  var state = { to:"", o:0, m:"", c:0, from:"" };
+
+  /* ── 주소 ↔ 편지 ── */
+  function enc(o){
+    var bytes = new TextEncoder().encode(JSON.stringify(o));
+    var bin = "";
+    for (var i=0;i<bytes.length;i++) bin += String.fromCharCode(bytes[i]);
+    return btoa(bin).replace(/\+/g,"-").replace(/\//g,"_").replace(/=+$/,"");
+  }
+  function dec(s){
+    s = s.replace(/-/g,"+").replace(/_/g,"/");
+    while (s.length % 4) s += "=";
+    var bin = atob(s);
+    var bytes = new Uint8Array(bin.length);
+    for (var i=0;i<bin.length;i++) bytes[i] = bin.charCodeAt(i);
+    return JSON.parse(new TextDecoder().decode(bytes));
+  }
+
+  /* ── 선택지 ── */
+  function buildChoices(host, list, key){
+    list.forEach(function(text, i){
+      var b = document.createElement("button");
+      b.type = "button";
+      b.className = "choice";
+      b.setAttribute("aria-pressed", String(state[key] === i));
+      b.innerHTML = '<span class="tick"></span><span></span>';
+      b.lastChild.textContent = text;
+      b.addEventListener("click", function(){
+        state[key] = i;
+        Array.prototype.forEach.call(host.children, function(c, j){
+          c.setAttribute("aria-pressed", String(j === i));
+        });
+        render();
+      });
+      host.appendChild(b);
+    });
+  }
+
+  /* ── 종이에 그리기 ── */
+  function render(){
+    var to = state.to.trim();
+    $("pTo").textContent = to || "받는 분";
+    $("pTo").classList.toggle("empty", !to);
+
+    $("pOpen").textContent = OPENERS[state.o];
+
+    var m = state.m.trim();
+    $("pMine").textContent = m || "— 여기에 당신의 한 문장이 들어갑니다 —";
+    $("pMine").classList.toggle("empty", !m);
+
+    $("pClose").textContent = CLOSERS[state.c];
+
+    var from = state.from.trim();
+    $("pFrom").textContent = from || "보내는 사람";
+    $("pFrom").classList.toggle("empty", !from);
+
+    var first = from.replace(/\s*(드림|올림|배상)\s*$/,"").trim().charAt(0);
+    $("pSeal").textContent = first || "印";
+
+    $("makeBtn").disabled = !(to && m && from);
+  }
+
+  /* ── 읽기 모드 ── */
+  function readingMode(data){
+    document.body.classList.add("reading");
+    state.to = data.to || "";
+    state.m = data.m || "";
+    state.from = data.from || "";
+    state.o = (typeof data.o === "number" && OPENERS[data.o]) ? data.o : 0;
+    state.c = (typeof data.c === "number" && CLOSERS[data.c]) ? data.c : 0;
+    render();
+    document.title = (state.to ? state.to + "께 " : "") + "홍성에서 보내는 편지";
+  }
+
+  /* ── 시작 ── */
+  window.addEventListener("hashchange", function(){ location.reload(); });
+
+  var hash = location.hash.replace(/^#l=/, "");
+  var opened = null;
+  if (location.hash.indexOf("#l=") === 0 && hash) {
+    try { opened = dec(hash); } catch(e) { opened = null; }
+  }
+
+  if (opened) {
+    readingMode(opened);
+  } else {
+    buildChoices($("openers"), OPENERS, "o");
+    buildChoices($("closers"), CLOSERS, "c");
+
+    state.to = EXAMPLE.to; state.o = EXAMPLE.o; state.m = EXAMPLE.m;
+    state.c = EXAMPLE.c; state.from = EXAMPLE.from;
+    $("to").value = state.to;
+    $("mine").value = state.m;
+    $("from").value = state.from;
+
+    $("to").addEventListener("input", function(e){ state.to = e.target.value; render(); });
+    $("mine").addEventListener("input", function(e){ state.m = e.target.value; render(); });
+    $("from").addEventListener("input", function(e){ state.from = e.target.value; render(); });
+
+    $("clearBtn").addEventListener("click", function(){
+      state.to = ""; state.m = ""; state.from = "";
+      $("to").value = ""; $("mine").value = ""; $("from").value = "";
+      $("prefillNote").hidden = true;
+      $("out").hidden = true;
+      $("status").textContent = "";
+      $("to").focus();
+      render();
+    });
+
+    $("makeBtn").addEventListener("click", function(){
+      var url = location.origin + location.pathname + "#l=" + enc({
+        to: state.to.trim(), o: state.o, m: state.m.trim(), c: state.c, from: state.from.trim()
+      });
+      $("url").value = url;
+      $("out").hidden = false;
+      $("status").textContent = "링크가 만들어졌습니다. 선물 보내실 때 이 주소를 함께 보내세요.";
+      $("url").focus(); $("url").select();
+    });
+
+    $("copyBtn").addEventListener("click", function(){
+      var el = $("url");
+      el.focus(); el.select();
+      var done = function(){ $("status").textContent = "복사했습니다."; };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(el.value).then(done, function(){
+          $("status").textContent = "주소가 선택되어 있습니다. 직접 복사해 주세요.";
+        });
+      } else {
+        try { document.execCommand("copy"); done(); }
+        catch(e){ $("status").textContent = "주소가 선택되어 있습니다. 직접 복사해 주세요."; }
+      }
+    });
+
+    $("openBtn").addEventListener("click", function(){
+      var v = $("url").value;
+      var i = v.indexOf("#");
+      if (i >= 0) { location.hash = v.slice(i + 1); location.reload(); }
+    });
+
+    render();
+  }
+})();
+</script>
+</body>
+</html>

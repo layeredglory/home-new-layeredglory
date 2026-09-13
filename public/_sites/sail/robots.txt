@@ -1,0 +1,16 @@
+User-agent: *
+Allow: /
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: Yeti
+Allow: /
+
+User-agent: Daumoa
+Allow: /
+
+User-agent: bingbot
+Allow: /
+
+Sitemap: https://sail.layeredglory.com/sitemap.xml
