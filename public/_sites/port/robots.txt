@@ -1,4 +1,3 @@
+# Local review package. Update only after the production domain and indexing policy are approved.
 User-agent: *
-Allow: /
-
-Sitemap: https://port.layeredglory.com/sitemap.xml
+Disallow: /
